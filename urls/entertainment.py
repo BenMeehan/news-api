@@ -1,1 +1,1 @@
-ENTERTAINMENT=["https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms"]
+ENTERTAINMENT=["https://www.thehindu.com/entertainment/feeder/default.rss"]
