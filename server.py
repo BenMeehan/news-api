@@ -3,7 +3,6 @@ from urllib import response
 from flask import Flask
 from pathlib import Path
 import os
-import requests
 import random
 import threading
 import feedparser
@@ -20,24 +19,20 @@ app = Flask(__name__)
 
 newsIndex = {}
 
-header={
-    "api_key":"fyfxerztqoyrnm9khlpzpmxzjibiiehzqzmlcbj5"
-}
-
-
 def downloadNews(key, val):
-    newsIndex[key] = []
-    url = val
-    blog=feedparser.parse(url)
-    # response = requests.get(url,headers=header)
-    # print(response.json())
-    items= blog["entries"]
-    for i in items:
-        temp={}
-        temp["title"]=i["title"]
-        temp["link"]=i["link"]
-        temp["pubDate"]=i["published"]
-        newsIndex[key].append(temp)
+    try:
+        newsIndex[key] = []
+        url = val
+        blog=feedparser.parse(url)
+        items= blog["entries"]
+        for i in items:
+            temp={}
+            temp["title"]=i["title"]
+            temp["link"]=i["link"]
+            temp["pubDate"]=i["published"]
+            newsIndex[key].append(temp)
+    except:
+        print("error")
     random.shuffle(newsIndex[key])
 
 
