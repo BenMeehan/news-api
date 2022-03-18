@@ -1,4 +1,4 @@
-WORLD_NEWS=["https://www.indiatoday.in/rss/1206577",
+WORLD_NEWS=[
     "http://feeds.feedburner.com/ndtvnews-world-news?format=xml"
 ]
 
