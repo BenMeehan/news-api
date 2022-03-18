@@ -1,0 +1,1 @@
+TECH=["https://timesofindia.indiatimes.com/rssfeeds/66949542.cms"]
