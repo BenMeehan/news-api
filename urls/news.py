@@ -20,7 +20,7 @@ NEWS={
     "Europe":EUROPE,
     "Mumbai":MUMBAI,
     "Delhi":DELHI,
-    "Banglore":BANGLORE,
+    "Bangalore":BANGLORE,
     "Hyderabad":HYDERABAD,
     "Chennai":CHENNAI,
     "Ahemdabhad":AHEMDABHAD,
