@@ -8,6 +8,8 @@ import threading
 import feedparser
 import sys
 from apscheduler.schedulers.background import BackgroundScheduler
+from datetime import datetime
+
 
 
 sys.path.insert(0, os.path.join(str(Path().absolute()), "urls"))
@@ -18,6 +20,7 @@ from news import NEWS
 app = Flask(__name__)
 
 newsIndex = {}
+now = datetime.now()
 
 def downloadNews(key, val):
     try:
@@ -29,11 +32,10 @@ def downloadNews(key, val):
             temp={}
             temp["title"]=i["title"]
             temp["link"]=i["link"]
-            temp["pubDate"]=i["published"]
+            temp["pubDate"]=now.strftime("%d/%m/%Y")
             newsIndex[key].append(temp)
     except:
         print("error")
-    random.shuffle(newsIndex[key])
 
 
 def getNews():
